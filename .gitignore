@@ -1,0 +1,15 @@
+.vscode/
+settings.json
+geckodriver.log
+bin/
+obj/
+.vs/
+*.dbmdl
+*.refactorlog
+*.sqlproj
+*.sqlproj.user
+*.7z
+*.zip
+php_errors.log
+.buildpath
+.project
