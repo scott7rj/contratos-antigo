@@ -44,6 +44,26 @@
 								<i class="fa fa-flag"></i> Tipos de penalidade
 							</a>
 						</li>
+						<li>
+							<a href="templates/unidade_modal_inserir_remover.php" data-toggle="modal" data-target="#modal">
+								<i class="fa fa-building"></i> Unidades
+							</a>
+						</li>
+						<li>
+							<a href="templates/funcao_modal_inserir_remover.php" data-toggle="modal" data-target="#modal">
+								<i class="fa fa-briefcase"></i> Funções
+							</a>
+						</li>
+						<li>
+							<a href="templates/perfil_modal_inserir_remover.php" data-toggle="modal" data-target="#modal">
+								<i class="fa fa-group"></i> Perfis
+							</a>
+						</li>
+						<li>
+							<a href="templates/usuario_modal_inserir_remover.php" data-toggle="modal" data-target="#modal">
+								<i class="fa fa-user"></i> Usuários
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
