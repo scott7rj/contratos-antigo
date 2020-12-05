@@ -44,10 +44,10 @@ final class ComboBuilder {
             $dao = new UnidadeDAO();
             $array = $dao->selecionarUnidades();
             foreach($array as $item) {
-                if($selected === $item['id_unidade'])
-                    $result .= "<option value='{$item['id_unidade']}' selected>{$item['unidade']}</option>";
+                if($selected === $item->getIdUnidade())
+                    $result .= "<option value='{$item->getIdUnidade()}' selected>{$item->getUnidade()}</option>";
                 else
-                    $result .= "<option value='{$item['id_unidade']}'>{$item['unidade']}</option>";
+                    $result .= "<option value='{$item->getIdUnidade()}'>{$item->getUnidade()}</option>";
             }
         } catch(Exception $e) {
             throw new Exception("0_" . $e->getMessage());
@@ -64,10 +64,10 @@ final class ComboBuilder {
             $dao = new FuncaoDAO();
             $array = $dao->selecionarFuncoes();
             foreach($array as $item) {
-                if($selected === $item['id_funcao'])
-                    $result .= "<option value='{$item['id_funcao']}' selected>{$item['funcao']}</option>";
+                if($selected === $item->getIdFuncao())
+                    $result .= "<option value='{$item->getIdFuncao()}' selected>{$item->getFuncao()}</option>";
                 else
-                    $result .= "<option value='{$item['id_funcao']}'>{$item['funcao']}</option>";
+                    $result .= "<option value='{$item->getIdFuncao()}'>{$item->getFuncao()}</option>";
             }
         } catch(Exception $e) {
             throw new Exception("0_" . $e->getMessage());
@@ -84,10 +84,10 @@ final class ComboBuilder {
             $dao = new PerfilDAO();
             $array = $dao->selecionarPerfis();
             foreach($array as $item) {
-                if($selected === $item['id_perfil'])
-                    $result .= "<option value='{$item['id_perfil']}' selected>{$item['perfil']}</option>";
+                if($selected === $item->getIdPerfil())
+                    $result .= "<option value='{$item->getIdPerfil()}' selected>{$item->getPerfil()}</option>";
                 else
-                    $result .= "<option value='{$item['id_perfil']}'>{$item['perfil']}</option>";
+                    $result .= "<option value='{$item->getIdPerfil()}'>{$item->getPerfil()}</option>";
             }
         } catch(Exception $e) {
             throw new Exception("0_" . $e->getMessage());

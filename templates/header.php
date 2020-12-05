@@ -4,23 +4,33 @@
 	if (isset($_SESSION['log_user']))
 		$log_user = $_SESSION['log_user'];
 	else
-		$log_user = '';
+		$log_user = 'C110611';
 
 	$url = basename($_SERVER['PHP_SELF'],'.php');
 
 	if($url <> "login") {
 		if(!empty($log_user)) {
+			$_SESSION['nome'] = 'MAURO';
+			$_SESSION['id_funcao'] = '1234';
+			$_SESSION['funcao'] = 'ASSISTENTE';
+			$_SESSION['id_unidade'] = '7289';
+			$_SESSION['sg_unidade'] = 'CECOP';
+			$_SESSION['nm_unidade'] = 'CECOP';
+
 			$nome 		= $_SESSION['nome'];
 			$id_funcao	= $_SESSION['id_funcao'];
 			$funcao 	= $_SESSION['funcao'];
 			$id_unidade	= $_SESSION['id_unidade'];
 			$sg_unidade	= $_SESSION['sg_unidade'];
 			$nm_unidade	= $_SESSION['nm_unidade'];
+
 		} else {
 			header("location:login.php");
 			exit();
 		}
 	}
+
+
 
 	if($log_user == "C137703") {
 		ini_set('display_errors',1);

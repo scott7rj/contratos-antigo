@@ -4,7 +4,7 @@ final class conexao {
 
 	public static function execute($sql) {
 
-		$dsn  = "DRIVER={SQL Server};SERVER=DF7436SR327;DATABASE=DB7289_CONTRATOS_DES";
+		$dsn  = "DRIVER={SQL Server};SERVER=OPTIPLEX\SQLEXPRESS;DATABASE=DB7289_CONTRATOS_DES";
 		$user = "s728901";
 		$pass = "P@55_01#";
 

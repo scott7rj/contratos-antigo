@@ -94,6 +94,7 @@ class empresa {
 			$empresa->setCep($array["cep"]);
 			$empresa->setObservacao(utf8_encode($array["observacao"]));
 			$lst[] = $empresa;
+			break;
 		}
 		return $lst[0];
 	}
