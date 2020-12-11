@@ -60,7 +60,6 @@ $lista = $dao->selecionarPerfis();
 <script>
 $(document).ready(function() {
 	pageSetUp();
-	$('.modal-content').css({"width":"50%"});
 	montarListaPerfil();
 
 });

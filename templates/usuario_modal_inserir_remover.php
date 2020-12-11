@@ -4,7 +4,6 @@ require_once "../dao/usuario_dao.php";
 require_once "../util/combo_builder.php";
 
 $log_user = strtoupper(substr(getenv('LOGON_USER'),10));
-$log_user = 'C110611';
 
 $dao = new UsuarioDAO();
 $lista = $dao->selecionarUsuarios();

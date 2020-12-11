@@ -10,14 +10,14 @@ final class UsuarioDAO {
 		$lst = array();
 		while($array = odbc_fetch_array($rst)) {
 			$obj = new Usuario();
-			$obj->getUnidade()->setIdUnidade($array["id_unidade"]);
-			$obj->getUnidade()->setUnidade(utf8_encode($array["unidade"]));
+			$obj->setIdUnidade($array["id_unidade"]);
+			$obj->setUnidade(utf8_encode($array["unidade"]));
 
-			$obj->getIdPerfil()->setIdPerfil($array["id_perfil"]);
-			$obj->getPerfil()->setPerfil(utf8_encode($array["perfil"]));
+			$obj->setIdPerfil($array["id_perfil"]);
+			$obj->setPerfil(utf8_encode($array["perfil"]));
 
-			$obj->getIdFuncao()->setIdFuncao($array["id_funcao"]);
-			$obj->getFuncao()->setFuncao(utf8_encode($array["funcao"]));
+			$obj->setIdFuncao($array["id_funcao"]);
+			$obj->setFuncao(utf8_encode($array["funcao"]));
 
 			array_push($lst, $obj);
 			break;
@@ -33,12 +33,12 @@ final class UsuarioDAO {
 			$obj = new Usuario();
 			$obj->setIdUsuario($array["id_usuario"]);
 			$obj->setNome(utf8_encode($array["nome"]));
-			$obj->getPerfil()->setIdPerfil($array["id_perfil"]);
-			$obj->getPerfil()->setPerfil($array["perfil"]);
-			$obj->getUnidade()->setIdUnidade($array["id_unidade"]);
-			$obj->getUnidade()->setUnidade($array["unidade"]);
-			$obj->getFuncao()->setIdFuncao($array["id_funcao"]);
-			$obj->getFuncao()->setFuncao($array["funcao"]);
+			$obj->setIdPerfil($array["id_perfil"]);
+			$obj->setPerfil($array["perfil"]);
+			$obj->setIdUnidade($array["id_unidade"]);
+			$obj->setUnidade($array["unidade"]);
+			$obj->setIdFuncao($array["id_funcao"]);
+			$obj->setFuncao($array["funcao"]);
 			array_push($lst, $obj);
 		}
 		return $lst;
@@ -48,9 +48,9 @@ final class UsuarioDAO {
 		try {
 			$sql = "EXEC [contratos].[usuario_inserir] @id_usuario = '{$obj->getIdUsuario()}',
 					@nome = '{$obj->getNome()}',
-					@id_perfil = {$obj->getPerfil()->getIdPerfil()},
-					@id_unidade = {$obj->getUnidade()->getIdUnidade()},
-					@id_funcao = {$obj->getFuncao()->getIdFuncao()},
+					@id_perfil = {$obj->getIdPerfil()},
+					@id_unidade = {$obj->getIdUnidade()},
+					@id_funcao = {$obj->getIdFuncao()},
 					@usuario_alteracao = '{$obj->getUsuarioAlteracao()}'";
 			$rst = conexao::execute($sql);
 			return odbc_result($rst, 1);

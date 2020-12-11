@@ -17,9 +17,9 @@ try {
 	$obj->setIdUsuario($idUsuario);
 	$obj->setNome($usuario);
 	$obj->setUsuarioAlteracao($usuarioAlteracao);
-	$obj->getPerfil()->setIdPerfil($idPerfil);
-	$obj->getUnidade()->setIdUnidade($idUnidade);
-	$obj->getFuncao()->setIdFuncao($idFuncao);
+	$obj->setIdPerfil($idPerfil);
+	$obj->setIdUnidade($idUnidade);
+	$obj->setIdFuncao($idFuncao);
 
 	$dao = new UsuarioDAO();
 	$msg = $dao->inserir($obj);

@@ -19,9 +19,6 @@
 		<div id="main" role="main" style="margin-left: 0px">
 
 			<div id="content" style="padding-top: 20px;font-size: 18px;">
-				<div style="padding-left: 30px;color: green;">
-					<h2><b>AMBIENTE DE DESENVOLVIMENTO</b></h2>
-				</div>
 				<ul>
 					<li>
 						<a href="empresas.php">

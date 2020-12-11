@@ -4,7 +4,7 @@ final class conexao {
 
 	public static function execute($sql) {
 
-		$dsn  = "DRIVER={SQL Server};SERVER=OPTIPLEX\SQLEXPRESS;DATABASE=DB7289_CONTRATOS_DES";
+		$dsn  = "DRIVER={SQL Server};SERVER=DF7436SR327;DATABASE=DB7289_CONTRATOS_DES";
 		$user = "s728901";
 		$pass = "P@55_01#";
 
@@ -13,7 +13,7 @@ final class conexao {
 		return $rst;
 	}
 
-	public function acessoLdap($log_user, $password) {
+	public static function acessoLdap($log_user, $password) {
 
 		$ldap_connect = ldap_connect('ldap://ldapcluster.corecaixa:489');
 		ldap_set_option( $ldap_connect, LDAP_OPT_PROTOCOL_VERSION, 3);
@@ -26,7 +26,7 @@ final class conexao {
 			$search_handle = ldap_search($ldap_connect, 'ou=People,o=caixa', $search_filter);
 
 			if(!$search_handle) {
-				return "Servidor de AutenticaÃ§Ã£o IndisponÃ­vel (LDAP: erro na consulta).";
+				return "Servidor de Autenticação Indisponí­vel (LDAP: erro na consulta).";
 			} else {
 				$ldap_resultado = ldap_get_entries($ldap_connect, $search_handle);
 
@@ -47,13 +47,13 @@ final class conexao {
 						$_SESSION["nm_unidade"]	= $ldap_user["no-lotacaofisica"][0];
 						return 1;
 					} else {
-						return "Unidade $id_unidade nÃ£o possui acesso ao sistema.";
+						return "Unidade $id_unidade não possui acesso ao sistema.";
 					}
 				}
 			}
 
 		} else {
-			return "Acesso Negado<br>UsuÃ¡rio ou senha incorretos.";
+			return "Acesso Negado<br>Usuário ou senha incorretos.";
 		}
 	}
 }

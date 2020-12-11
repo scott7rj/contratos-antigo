@@ -54,10 +54,11 @@
 						</form>
 					</div>
 
-					<div id="div_competencias" class="col-md-12" style="display: none;width: 20%;">
+					<div id="div_competencias" class="col-md-12" style="display: none;width: 40%;">
 						<table class="table table-bordered" style="margin:0; padding:0;">
 							<thead>
-								<th>COMPETÊNCIA</th>
+								<!-- <th>COMPETÊNCIA</th> -->
+								<th colspan="3">COMPETÊNCIA</th>
 							</thead>
 							<tbody id="tbody_competencias">
 								<!-- js:montarListaCompetencias -->

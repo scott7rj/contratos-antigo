@@ -26,7 +26,7 @@
 					<ul>
 						<li>
 							<a href="templates/tipo_contato_modal_inserir_remover.php" data-toggle="modal" data-target="#modal">
-								<i class="fa fa-group"></i> Tipos de contato
+								<i class="fa fa-comments"></i> Tipos de contato
 							</a>
 						</li>
 						<li>

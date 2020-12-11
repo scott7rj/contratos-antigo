@@ -1,3 +1,5 @@
+
+<?php //require_once __DIR__."../dao/usuario_dao.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br" style="background: none;">
 
@@ -45,9 +47,23 @@
 							if(isset($_POST["password"])) {
 								$log_user	= $_POST["log_user"];
 								$password	= $_POST["password"];
-								$acessoLdap	= 1;//conexao::acessoLdap($log_user, $password);
+								$acessoLdap	= conexao::acessoLdap($log_user, $password);
 
 								if($acessoLdap == 1) {
+									//recuperando o perfil do usuario
+									$sql = "SELECT * FROM [contratos].[fn_usuario_selecionar_por_id]('$log_user')";
+									$rst = conexao::execute($sql);
+									$array = odbc_fetch_array($rst);
+									if (sizeof($array) == 0) {
+										$_SESSION["id_perfil"] = 0;
+										$_SESSION["perfil"] = "SEM PERFIL";
+									} else {
+										foreach($array as $item) {
+											$_SESSION["id_perfil"] = $item["id_perfil"];
+											$_SESSION["perfil"] = $item["perfil"];
+											break;
+										}
+									}
 									header("location:index.php");
 									exit();
 								} else {

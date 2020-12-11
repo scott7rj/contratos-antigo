@@ -4,33 +4,25 @@
 	if (isset($_SESSION['log_user']))
 		$log_user = $_SESSION['log_user'];
 	else
-		$log_user = 'C110611';
+		$log_user = '';
 
 	$url = basename($_SERVER['PHP_SELF'],'.php');
 
 	if($url <> "login") {
 		if(!empty($log_user)) {
-			$_SESSION['nome'] = 'MAURO';
-			$_SESSION['id_funcao'] = '1234';
-			$_SESSION['funcao'] = 'ASSISTENTE';
-			$_SESSION['id_unidade'] = '7289';
-			$_SESSION['sg_unidade'] = 'CECOP';
-			$_SESSION['nm_unidade'] = 'CECOP';
-
 			$nome 		= $_SESSION['nome'];
 			$id_funcao	= $_SESSION['id_funcao'];
 			$funcao 	= $_SESSION['funcao'];
 			$id_unidade	= $_SESSION['id_unidade'];
 			$sg_unidade	= $_SESSION['sg_unidade'];
 			$nm_unidade	= $_SESSION['nm_unidade'];
-
+			$id_perfil	= $_SESSION['id_perfil'];
+			$perfil 	= $_SESSION['perfil'];
 		} else {
 			header("location:login.php");
 			exit();
 		}
 	}
-
-
 
 	if($log_user == "C137703") {
 		ini_set('display_errors',1);
@@ -39,10 +31,10 @@
 	}
 
 	include_once 'classes/conexao.php';
+	//include_once  'dao/usuario_dao.php';
 ?>
 
 <header id="header">
-	<div id="log_user" style="display: none;"><?php echo $log_user?></div>
 
 	<span id="logo">
 		<a href="index.php" style="color: #fff">PORTAL DE CONTROLE E GESTÃO DE CONTRATOS</a>
@@ -53,7 +45,7 @@
 		<li>
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #fff;">
 				<span> <?php echo "Bem vindo ".strstr($nome, ' ', true); ?> </span><br>
-				<span> <?php echo $id_unidade." - ".$sg_unidade; ?> </span>
+				<span> <?php echo $id_unidade." - ".$sg_unidade." - ".$perfil; ?> </span>
 				<span class="pull-right"><i class="fa fa-angle-down"></i></span>
 			</a>
 			<ul class="dropdown-menu pull-right">

@@ -3,6 +3,8 @@ include_once "../classes/conexao.php";
 include_once "../classes/empresa.php";
 include_once "../util/db_util.php";
 
+session_start();
+
 try {
 
 	$existe_empresa		= $_POST["existe_empresa"];
@@ -13,7 +15,7 @@ try {
 	$uf					= $_POST["uf"];
 	$cep				= str_replace("-","", $_POST["cep"]);
 	$observacao 		= DbUtil::removeAspasSimples(utf8_decode($_POST["observacao"]));
-	$usuario_alteracao	= $_POST["usuario_alteracao"];
+	$usuario_alteracao	= $_SESSION['log_user'];
 
 	$empresa = new empresa();
 

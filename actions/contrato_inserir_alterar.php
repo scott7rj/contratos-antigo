@@ -3,6 +3,8 @@ include_once "../classes/conexao.php";
 include_once "../classes/contrato.php";
 include_once "../util/db_util.php";
 
+session_start();
+
 try {
 
 	$existe_contrato				 = $_POST["existe_contrato"];
@@ -21,7 +23,7 @@ try {
 	$prazo_alerta_dias_ateste		 = $_POST["dias_alerta_ateste"];
 	$prazo_alerta_dias_nota_fiscal	 = $_POST["dias_alerta_nota_fiscal"];
 	$prazo_alerta_meses_fim_vigencia = $_POST["meses_alerta_fim_vigencia"];
-	$usuario_alteracao 				 = $_POST["usuario_alteracao"];
+	$usuario_alteracao				 = $_SESSION['log_user'];
 
 	$contrato = new contrato();
 

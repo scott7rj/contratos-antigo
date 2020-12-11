@@ -28,12 +28,11 @@ $("#frm_novo_tipo_contrato").on("submit", function(ev) {
 					var emp = rst.split("_");
 					var inserido = parseInt(emp[0]);
 					var mensagem = emp[1];
-					
+
 					if(inserido) {
 						$("#frm_novo_tipo_contrato").trigger("reset");
 						montarListaTipoContrato();
 					}
-		
 					alert(mensagem);
 				},
 			});

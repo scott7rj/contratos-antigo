@@ -46,7 +46,6 @@ $("#nova_empresa").on("submit", function(ev) {
 
 function removerEmpresa(id_empresa) {
 	var razao_social = $("#emp"+id_empresa).find("td:nth-child(2)").text();
-	var usuario_alteracao = $("#log_user").text();
 
 	$.SmartMessageBox({
 		title : "Confirma remoção da empresa : " + razao_social + " ?",
@@ -56,7 +55,7 @@ function removerEmpresa(id_empresa) {
 
 			$.ajax({
 				url: "actions/empresa_remover.php",
-				data: {id_empresa:id_empresa, usuario_alteracao:usuario_alteracao},
+				data: {id_empresa:id_empresa},
 				type: "POST",
 				success: function(rst){
 					var rs = rst.split("_");

@@ -3,7 +3,6 @@ include_once "../classes/conexao.php";
 include_once "../dao/unidade_dao.php";
 
 $log_user = strtoupper(substr(getenv('LOGON_USER'),10));
-$log_user = 'C110611';
 
 $dao = new UnidadeDAO();
 $lista = $dao->selecionarUnidades();

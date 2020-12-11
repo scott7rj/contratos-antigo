@@ -64,7 +64,6 @@ $lista = $dao->selecionarFuncoes();
 <script>
 $(document).ready(function() {
 	pageSetUp();
-	$('.modal-content').css({"width":"50%"});
 	montarListaFuncao();
 	$('#txt_id_funcao').mask('0000', {clearIfNotMatch: true});
 });

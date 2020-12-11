@@ -8,16 +8,17 @@ require_once "funcao.php";
 final class Usuario extends AppModel {
 	private $idUsuario;
 	private $nome;
+    private $idPerfil;
 	private $perfil;
+    private $idFuncao;
 	private $funcao;
+    private $idUnidade;
 	private $unidade;
 
 	public function __construct() {
 		parent::__construct();
-		$this->perfil = new Perfil();
-		$this->unidade = new Unidade();
-		$this->funcao = new Funcao();
 	}
+
 
     /**
      * @return mixed
@@ -62,6 +63,26 @@ final class Usuario extends AppModel {
     /**
      * @return mixed
      */
+    public function getIdPerfil()
+    {
+        return $this->idPerfil;
+    }
+
+    /**
+     * @param mixed $idPerfil
+     *
+     * @return self
+     */
+    public function setIdPerfil($idPerfil)
+    {
+        $this->idPerfil = $idPerfil;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getPerfil()
     {
         return $this->perfil;
@@ -82,6 +103,26 @@ final class Usuario extends AppModel {
     /**
      * @return mixed
      */
+    public function getIdFuncao()
+    {
+        return $this->idFuncao;
+    }
+
+    /**
+     * @param mixed $idFuncao
+     *
+     * @return self
+     */
+    public function setIdFuncao($idFuncao)
+    {
+        $this->idFuncao = $idFuncao;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getFuncao()
     {
         return $this->funcao;
@@ -95,6 +136,26 @@ final class Usuario extends AppModel {
     public function setFuncao($funcao)
     {
         $this->funcao = $funcao;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUnidade()
+    {
+        return $this->idUnidade;
+    }
+
+    /**
+     * @param mixed $idUnidade
+     *
+     * @return self
+     */
+    public function setIdUnidade($idUnidade)
+    {
+        $this->idUnidade = $idUnidade;
 
         return $this;
     }

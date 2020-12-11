@@ -93,7 +93,7 @@ include_once "../util/mask.php";
 
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-	<h4 class="modal-title"><b><?php echo $modal_title?></b></h4>
+	<h4 class="modal-title"><b><?= $modal_title?></b></h4>
 </div>
 <div class="modal-body">
 
@@ -141,7 +141,7 @@ include_once "../util/mask.php";
 						<section class="col col-3">
 							<label class="label">Empresa do contrato</label>
 							<?php if($existe_contrato) { ?>
-							<label class="label"><b><?php echo $nm_empresa?></b></label>
+							<label class="label"><b><?= $nm_empresa?></b></label>
 							<?php } else { ?>
 							<label class="select">
 								<select class="input-xs" name="id_empresa" required>
@@ -152,7 +152,7 @@ include_once "../util/mask.php";
 											$nm_empresa = $empresa->getEmpresa();
 									?>
 									<option value="<?php echo $id_empresa?>">
-										<?php echo $nm_empresa?>
+										<?= $nm_empresa?>
 									</option>
 									<?php
 										}
@@ -164,7 +164,7 @@ include_once "../util/mask.php";
 						<section class="col col-3">
 							<label class="label">Tipo de contrato</label>
 							<?php if($existe_contrato) { ?>
-							<label class="label"><b><?php echo $tipo_contrato?></b></label>
+							<label class="label"><b><?= $tipo_contrato?></b></label>
 							<?php } else { ?>
 							<label class="select">
 								<select class="input-xs" name="id_tipo_contrato" required>
@@ -175,7 +175,7 @@ include_once "../util/mask.php";
 											$nm_tipo_contrato = $tipo_contrato->getTipoContrato();
 									?>
 									<option value="<?php echo $id_tipo_contrato?>">
-										<?php echo $nm_tipo_contrato?>
+										<?= $nm_tipo_contrato?>
 									</option>
 									<?php
 										}
@@ -187,7 +187,7 @@ include_once "../util/mask.php";
 						<section class="col col-3">
 							<label class="label">Número do processo</label>
 							<?php if($existe_contrato) { ?>
-							<label class="label"><b><?php echo $numero_processo?></b></label>
+							<label class="label"><b><?= $numero_processo?></b></label>
 							<?php } else { ?>
 							<label class="input">
 								<input type="text" class="input-xs" id="txt_numero_processo" name="numero_processo" value="<?php echo $numero_processo?>" required>
@@ -549,7 +549,7 @@ $('#txt_numero_processo').blur(function(){
 	$('#txt_numero_processo').val(limpa.toUpperCase());
 });
 $('#txt_compromisso_siplo').blur(function(){
-	let limpa = removerCaracteresEspeciais($('#txt_compromisso_siplo').val());
+	let limpa = removerCaracteresEspeciaisSiplo($('#txt_compromisso_siplo').val());
 	$('#txt_compromisso_siplo').val(limpa.toUpperCase());
 });
 $('#txt_item').blur(function(){

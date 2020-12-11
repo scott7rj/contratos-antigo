@@ -119,3 +119,9 @@ e.addEventListener('keyup', (event) => {
 		}
 	}
 });
+
+function removerCaracteresEspeciaisSiplo(str) {
+	str = str.trim();
+	str = str.replace(/[&\\#,&¬¨ªº°´`^~@§|%()$.'":*?<>{}¹²³£¢+]/g,'');
+	return str;
+}

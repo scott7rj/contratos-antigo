@@ -1,4 +1,5 @@
 <?php
+require_once "../dao/uf_dao.php";
 require_once "../dao/unidade_dao.php";
 require_once "../dao/funcao_dao.php";
 require_once "../dao/perfil_dao.php";
@@ -33,6 +34,26 @@ final class ComboBuilder {
     }
     public function buildFoot() {
         $result = "</select>";
+        return $result;
+    }
+
+    public static function uf($id, $class, $width, $hasEmptyOption, $selected) {
+        $result = (new self)->buildHead($id, $class, $width);
+        if($hasEmptyOption) 
+            $result .= "<option value=''></option>";
+        try {
+            $dao = new UfDAO();
+            $array = $dao->selecionarUfs();
+            foreach($array as $item) {
+                if($selected === $item->getUf())
+                    $result .= "<option value='{$item->getUf()}' selected>{$item->getUf()}</option>";
+                else
+                    $result .= "<option value='{$item->getUf()}'>{$item->getUf()}</option>";
+            }
+        } catch(Exception $e) {
+            throw new Exception("0_" . $e->getMessage());
+        }
+        $result .= (new self)->buildFoot();
         return $result;
     }
 

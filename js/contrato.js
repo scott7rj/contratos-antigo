@@ -101,7 +101,6 @@ $("#form_penalidades").on("submit", function(ev) {
 
 function removerContrato(id_contrato) {
 	var id_empresa  = $('#id_empresa').val();
-	var usuario_alteracao = $("#log_user").text();
 
 	$.SmartMessageBox({
 		title : "Confirma remoção do contrato ?",
@@ -111,7 +110,7 @@ function removerContrato(id_contrato) {
 
 			$.ajax({
 				url: "actions/contrato_remover.php",
-				data: {id_contrato:id_contrato, usuario_alteracao:usuario_alteracao},
+				data: {id_contrato:id_contrato},
 				type: "POST",
 				success: function(rst){
 					var rs = rst.split("_");

@@ -6,7 +6,7 @@ include_once "../util/db_util.php";
 	$id_dominio			= $_POST["id_dominio"]; // Nome genérico. Pode receber id_empresa, id_contrato,
 												// id_ateste ou id_penalidade.
 	$id_tipo_documento	= $_POST["id_tipo_documento"]; // Caracteriza o id_domínio do documento.
-	$usuario_alteracao	= $_POST["usuario_alteracao"];
+	$usuario_alteracao	= $_SESSION['log_user'];
 	$val_ptbr			= $_POST["validade"];
 	$data_validade		= ($val_ptbr == "" ? "NULL" : dbUtil::formataDataPtBrParaDB($val_ptbr));
 	$observacao 		= dbUtil::formataCampoParaDB(utf8_decode($_POST["observacao"]), 1);
